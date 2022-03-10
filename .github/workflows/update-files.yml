@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with: 
-          ref: ${{ github.ref }}
+          ref: master
       - run: |
           wget https://raw.githubusercontent.com/NebraLtd/helium-miner-software/master/balena/balena.yml.og -O /home/runner/work/helium-og/helium-og/balena.yml
           wget https://raw.githubusercontent.com/NebraLtd/helium-miner-software/master/device-compose-files/docker-compose-rpi.yml -O /home/runner/work/helium-og/helium-og/docker-compose.yml
