@@ -18,6 +18,6 @@ jobs:
         uses: test-room-7/action-update-file@v1
         with:
           branch: master
-          file-path: *.yml
+          file-path: /home/runner/work/helium-og/helium-og/*.yml
           commit-msg: Update balena.yml and docker-compose.yml              
           github-token: ${{ secrets.MR_BUMP }}
