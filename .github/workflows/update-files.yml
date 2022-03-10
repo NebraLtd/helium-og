@@ -21,6 +21,8 @@ jobs:
         uses: test-room-7/action-update-file@v1
         with:
           branch: master
-          file-path: balena.yml
+          file-path: |
+            balena.yml
+            docker-compose.yml
           commit-msg: Update balena.yml and docker-compose.yml              
           github-token: ${{ secrets.MR_BUMP }}
