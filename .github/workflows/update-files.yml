@@ -11,13 +11,16 @@ jobs:
         with: 
           ref: master
       - run: |
-          wget https://raw.githubusercontent.com/NebraLtd/helium-miner-software/master/balena/balena.yml.og -O /home/runner/work/helium-og/helium-og/balena.yml
-          wget https://raw.githubusercontent.com/NebraLtd/helium-miner-software/master/device-compose-files/docker-compose-rpi.yml -O /home/runner/work/helium-og/helium-og/docker-compose.yml
+          cd /home/runner/work/helium-og/helium-og
+          rm balena.yml
+          rm docker-compose.yml
+          wget https://raw.githubusercontent.com/NebraLtd/helium-miner-software/master/balena/balena.yml.og -O balena.yml
+          wget https://raw.githubusercontent.com/NebraLtd/helium-miner-software/master/device-compose-files/docker-compose-rpi.yml -O docker-compose.yml
       - name: Push updated docker compose file (Pisces)
         if: success()
         uses: test-room-7/action-update-file@v1
         with:
           branch: master
-          file-path: /home/runner/work/helium-og/helium-og/*.yml
+          file-path: balena.yml
           commit-msg: Update balena.yml and docker-compose.yml              
           github-token: ${{ secrets.MR_BUMP }}
