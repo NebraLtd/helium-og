@@ -16,7 +16,7 @@ jobs:
           rm docker-compose.yml
           wget https://raw.githubusercontent.com/NebraLtd/helium-miner-software/master/balena/balena.yml.og -O balena.yml
           wget https://raw.githubusercontent.com/NebraLtd/helium-miner-software/master/device-compose-files/docker-compose-rpi.yml -O docker-compose.yml
-      - name: Push updated docker compose file (Pisces)
+      - name: Push updated docker compose and balena.yml files
         if: success()
         uses: test-room-7/action-update-file@v1
         with:
