@@ -9,7 +9,7 @@ services:
       - diagnostics
     environment:
       - FIRMWARE_VERSION=2023.02.07.0-26
-      - FIRMWARE_SHORT_HASH=bb147ab
+      - FIRMWARE_SHORT_HASH=e393bc3
       - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
       - DBUS_SESSION_BUS_ADDRESS=unix:path=/session/dbus/session_bus_socket
     restart: on-failure
@@ -38,7 +38,7 @@ services:
       - nebra:/var/nebra
     environment:
       - FIRMWARE_VERSION=2023.02.07.0-26
-      - FIRMWARE_SHORT_HASH=bb147ab
+      - FIRMWARE_SHORT_HASH=e393bc3
     labels:
       io.balena.features.sysfs: 1
       io.balena.features.procfs: 1
@@ -79,7 +79,7 @@ services:
     environment:
       - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/session/dbus/session_bus_socket
       - FIRMWARE_VERSION=2023.02.07.0-26
-      - FIRMWARE_SHORT_HASH=bb147ab
+      - FIRMWARE_SHORT_HASH=e393bc3
 
   diagnostics:
     image: nebraltd/hm-diag:0f3ef09
@@ -87,7 +87,7 @@ services:
       - dbus-session
     environment:
       - FIRMWARE_VERSION=2023.02.07.0-26
-      - FIRMWARE_SHORT_HASH=bb147ab
+      - FIRMWARE_SHORT_HASH=e393bc3
       - DIAGNOSTICS_VERSION=0f3ef09
       - DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
     volumes:
@@ -121,7 +121,7 @@ services:
     environment:
       - DBUS_ADDRESS=unix:path=/session/dbus/session_bus_socket
       - FIRMWARE_VERSION=2023.02.07.0-26
-      - FIRMWARE_SHORT_HASH=bb147ab
+      - FIRMWARE_SHORT_HASH=e393bc3
 
 volumes:
   miner-storage:
